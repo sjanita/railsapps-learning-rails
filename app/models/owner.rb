@@ -1,7 +1,7 @@
 class Owner
 
   def name
-    name = 'Foobar Kadigan'
+    name = "Foobar Kadigan"
   end
 
   def birthdate
@@ -9,6 +9,7 @@ class Owner
   end
 
   def countdown
+    Rails.logger.debug 'DEBUG: entering Owner countdown method'
     today = DateTime.now
     birthday = Date.new(today.year, self.birthdate.month, self.birthdate.day)
     countdown = (birthday - today).to_i
